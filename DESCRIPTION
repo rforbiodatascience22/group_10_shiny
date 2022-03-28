@@ -1,8 +1,25 @@
 Package: centraldogma
 Title: central dogma in biology
 Version: 0.0.0.9000
-Authors@R: c(person('Mikkel', 'Wolfhagen', email = 's184240@student.dtu.dk', role = c('cre', 'aut')),
-person('Filip','Uzdowski', email = 's220257@dtu.dk', role = 'aut'))
+Authors@R: 
+ c(person(given = "Mikkel Frier",
+           family = "Wolfhagen",
+           email="s184240@student.dtu.dk",
+           role = c("cre",
+                    "aut")),
+    person(given = "Nilas Tim",
+           family = "Schüsler",
+           email="s123015@student.dtu.dk",
+           role = "aut"),
+    person(given = "Adresya Suresh",
+           family = "Azhakath",
+           role = "aut"),
+    person(given = "Kolbrun Dora",
+           family = "Magnusdottir",
+           role = "aut"),
+    person(given = "Filip Marek",
+           family = "Uzdowski",
+           role = "aut"))
 Description: Simulation of central dogma in biology .
 License: What license is it under?
 Imports: 
