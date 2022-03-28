@@ -1,0 +1,12 @@
+title: "Lab 9 - Assignment"
+subtitle: "Group 10"
+output: pdf_document
+author:
+  - Adresya Suresh Azhakath, s212920
+  - Filip Marek Uzdowski, s220257
+  - Mikkel Frier Wolfhagen, s184240
+  - Kolbrun Dora Magnusdottir, s213732
+  - Nilas Tim Schüsler, s123015
+  
+The most challenging thing about Shiny was the setup, a lot of time was spent on figuring out what the different helperfunctions did and what the structure actually was.
+The benefits of golem is that an experienced user of golem gets a lot of setup 
