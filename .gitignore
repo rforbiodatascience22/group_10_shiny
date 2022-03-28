@@ -6,3 +6,6 @@
 myshinyapp.Rcheck/
 myshinyapp*.tar.gz
 myshinyapp*.tgz
+centraldogma.Rcheck/
+centraldogma*.tar.gz
+centraldogma*.tgz
