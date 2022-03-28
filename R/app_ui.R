@@ -10,12 +10,16 @@ app_ui <- function(request) {
     golem_add_external_resources(),
     # Your application UI logic
     fluidPage(
-      h1("centraldogma"),
+      h1("centraldogmaapp"),
       tabsetPanel(
         tabPanel(title = "Peptide Maker",
                  mod_Peptide_Maker_ui("Peptide_Maker_1")),
         tabPanel(title = "panel2",
-                 "module2")
+                 "module2"),
+        tabPanel(title = "panel1",
+                 "module1"),
+        tabPanel(title = "Plot Amino acid occurrences",
+                 mod_plot_aa_occurrences_ui("plot_aa_occurrences_1"))
       )
     )
   )
@@ -39,7 +43,7 @@ golem_add_external_resources <- function() {
     favicon(),
     bundle_resources(
       path = app_sys("app/www"),
-      app_title = "centraldogma"
+      app_title = "centraldogmaapp"
     )
     # Add here other external resources
     # for example, you can add shinyalert::useShinyalert()
