@@ -1,17 +1,36 @@
 Package: centraldogma
-Title: An Amazing Shiny App
+Title: central dogma in biology
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "firstname",
-           family = "lastname",
-           role = c("aut", "cre"),
-           email = "your@email.com")
-Description: What the package does (one paragraph).
-License: What license is it under?
+ c(person(given = "Mikkel Frier",
+           family = "Wolfhagen",
+           email="s184240@student.dtu.dk",
+           role = c("cre",
+                    "aut")),
+    person(given = "Nilas Tim",
+           family = "Schüsler",
+           email="s123015@student.dtu.dk",
+           role = "aut"),
+    person(given = "Adresya Suresh",
+           family = "Azhakath",
+           role = "aut"),
+    person(given = "Kolbrun Dora",
+           family = "Magnusdottir",
+           role = "aut"),
+    person(given = "Filip Marek",
+           family = "Uzdowski",
+           role = "aut"))
+Description: Simulation of central dogma in biology .
+License: MIT + file LICENSE
 Imports: 
     config (>= 0.3.1),
     golem (>= 0.3.2),
     shiny (>= 1.7.1)
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
+Suggests: 
+    spelling,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Language: en-US
