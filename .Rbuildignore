@@ -7,3 +7,6 @@ $run_dev.*
 ^myshinyapp\.Rcheck$
 ^myshinyapp.*\.tar\.gz$
 ^myshinyapp.*\.tgz$
+^group10app\.Rcheck$
+^group10app.*\.tar\.gz$
+^group10app.*\.tgz$
