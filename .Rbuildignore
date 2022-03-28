@@ -16,3 +16,6 @@ $run_dev.*
 ^README\.Rmd$
 ^CODE_OF_CONDUCT\.md$
 >>>>>>> 02e6f10740d3b37a2c9fa3cc2685402415367229
+^centraldogmaapp\.Rcheck$
+^centraldogmaapp.*\.tar\.gz$
+^centraldogmaapp.*\.tgz$

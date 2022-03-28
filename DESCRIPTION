@@ -11,6 +11,7 @@ Authors@R: c(
 Description: Simulation of central dogma in biology .
 License: MIT + file LICENSE
 Imports: 
+    centraldogma,
     config (>= 0.3.1),
     golem (>= 0.3.2),
     shiny (>= 1.7.1)
