@@ -18,7 +18,8 @@ mod_plot_aa_occurrences_ui <- function(id){
           width = 300,
           height = 100,
           placeholder = "Insert peptide sequence"
-        )
+        ),
+        actionButton(inputId = ns("generate"), label = "Generate plot")
       ),
       mainPanel(
         plotOutput(
@@ -35,6 +36,14 @@ mod_plot_aa_occurrences_ui <- function(id){
 mod_plot_aa_occurrences_server <- function(id){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
+    occurrence_plot <- eventReactive(input$generate, {
+      if(input$peptide == ""){
+        NULL
+      } else {
+        centraldogma::plot_aa_occurrence(protein_string = input$peptide)
+      }
+    })
+    output$abundance <- renderPlot(occurrence_plot())
 
   })
 }
