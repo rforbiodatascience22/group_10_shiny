@@ -12,12 +12,17 @@ mod_Peptide_Maker_ui <- function(id){
   tagList(
     fluidRow(
       column(8,
-             textAreaInput(ns("DNA_Sequence"), "DNA Sequence")
+             textAreaInput(ns("DNA_Sequence"), "DNA Sequence",
+                           value = "Enter your DNA sequence here...")
              )
              ,
-      column(4, "random_dna_length", "generate_dna_button")
+      column(4,
+             numericInput(ns("length"), "Input the dna length",
+                          value = 0),
+             actionButton(ns("generate"), "Generate DNA")
+             )
     ),
-    "peptide_sequence"
+    textOutput("peptide")
   )
 }
 
