@@ -1,12 +1,9 @@
 Package: centraldogma
-Title: An Amazing Shiny App
+Title: central dogma in biology
 Version: 0.0.0.9000
-Authors@R: 
-    person(given = "firstname",
-           family = "lastname",
-           role = c("aut", "cre"),
-           email = "your@email.com")
-Description: What the package does (one paragraph).
+Authors@R: c(person('Mikkel', 'Wolfhagen', email = 's184240@student.dtu.dk', role = c('cre', 'aut')),
+person('Filip','Uzdowski', email = 's220257@dtu.dk', role = 'aut'))
+Description: Simulation of central dogma in biology .
 License: What license is it under?
 Imports: 
     config (>= 0.3.1),
