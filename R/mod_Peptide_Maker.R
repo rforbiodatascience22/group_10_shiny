@@ -33,6 +33,8 @@ mod_Peptide_Maker_server <- function(id){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
 
+    dna <- reactive(centraldogma::generate_dna(input$generate))
+    output$peptide <- dna
   })
 }
 
