@@ -11,9 +11,13 @@ author:
 ---
 
 The most challenging thing about Shiny was the setup, a lot of time was spent on figuring out what the different helper functions did and what the structure actually was.
-The benefits of golem is that an experienced user of golem gets a lot of setup for the app being developed. \\
-The downside is that all these options can be overwhelming for one not experienced with golem, especially the high degree of selectivity can make it hard to decipher what is actually important. \\
-Reproducibility is tricky with the Shiny apps, one way to cut down on confusion is to label the app clearly with the current version so people know which version of the app was being used for that specific analysis. \\
-This holds for the database as well as it would be relatively clear that database ver 1.0 might produce different results as database ver 1.1. \\
-This version naming should be automatically updated when the given app or database is updated.
+The benefits of golem is that an experienced user of golem gets a lot of setup for the app being developed. \par
+The downside is that all these options can be overwhelming for one not experienced with golem, especially the high degree of selectivity can make it hard to decipher what is actually important. \par
+Reproducibility is tricky with the Shiny apps, one way to cut down on confusion is to label the app clearly with the current version so people know which version of the app was being used for that specific analysis. \par
+Also interactive apps are especially difficult to reproduce if you have to do multiple clicks to get the desired data, as that is often not specified. \par
+This holds for the database as well as it would be relatively clear that database ver 1.0 might produce different results as database ver 1.1. \par
+This version naming should be automatically updated when the given app or database is updated. \par
+We see a challenge in incorporating Shiny apps in longer pipelines as the pipe needs to be broken to copy the input into the app. 
+This of course can be avoided by having links to the package behind the app at the webpage of the app. \par
+It can also be hard to see if an app is faulty as the code is not directly available to see, so you might end up with a faulty analysis because of a bad app. 
 
