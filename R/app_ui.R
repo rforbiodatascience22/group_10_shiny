@@ -12,8 +12,8 @@ app_ui <- function(request) {
     fluidPage(
       h1("centraldogmaapp"),
       tabsetPanel(
-        tabPanel(title = "panel1",
-                 "module1"),
+        tabPanel(title = "Peptide Maker",
+                 mod_Peptide_Maker_ui("Peptide_Maker_1")),
         tabPanel(title = "Plot Amino acid occurrences",
                  mod_plot_aa_occurrences_ui("plot_aa_occurrences_1"))
       )
