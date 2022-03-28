@@ -1,5 +1,6 @@
 #' Peptide_Maker UI Function
 #'
+#'
 #' @description A shiny Module.
 #'
 #' @param id,input,output,session Internal parameters for {shiny}.
@@ -13,8 +14,8 @@ mod_Peptide_Maker_ui <- function(id){
     fluidRow(
       column(8,
              textAreaInput(ns("DNA_Sequence"), "DNA Sequence",
-                           value = "Enter your DNA sequence here...")
-             )
+                           value = "Enter DNA sequence..."
+             ))
              ,
       column(4,
              numericInput(ns("length"), "Input the dna length",
@@ -22,21 +23,33 @@ mod_Peptide_Maker_ui <- function(id){
              actionButton(ns("generate"), "Generate DNA")
              )
     ),
-    textOutput("peptide")
-  )
-}
+    "The Peptide Sequence",
+    verbatimTextOutput(ns("peptide"))
+)}
 
 #' Peptide_Maker Server Functions
 #'
 #' @noRd
+
+simulation <- function(input){
+  input %>%
+    centraldogma::transcribe() %>%
+    centraldogma::split_codons() %>%
+    centraldogma::translate()
+}
 mod_Peptide_Maker_server <- function(id){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
+    observeEvent(input$generate, {
+      updateTextAreaInput(inputId = "DNA_Sequence",
+                          value = centraldogma::generate_dna(input$length))
+      })
 
-    dna <- reactive(centraldogma::generate_dna(input$generate))
-    output$peptide <- dna
-  })
-}
+     output$peptide <- renderPrint({
+       simulation(input$DNA_Sequence)
+       })
+     })
+  }
 
 ## To be copied in the UI
 # mod_Peptide_Maker_ui("Peptide_Maker_1")

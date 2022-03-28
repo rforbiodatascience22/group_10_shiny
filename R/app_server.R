@@ -1,5 +1,5 @@
 #' The application server-side
-#'
+#' @importFrom magrittr %>%
 #' @param input,output,session Internal parameters for {shiny}.
 #'     DO NOT REMOVE.
 #' @import shiny
