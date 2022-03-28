@@ -12,8 +12,8 @@ app_ui <- function(request) {
     fluidPage(
       h1("centraldogma"),
       tabsetPanel(
-        tabPanel(title = "panel1",
-                 "module1"),
+        tabPanel(title = "Peptide Maker",
+                 mod_Peptide_Maker_ui("Peptide_Maker_1")),
         tabPanel(title = "panel2",
                  "module2")
       )

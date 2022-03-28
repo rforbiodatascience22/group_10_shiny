@@ -6,4 +6,5 @@
 #' @noRd
 app_server <- function(input, output, session) {
   # Your application server logic
+  mod_Peptide_Maker_server("Peptide_Maker_1")
 }
