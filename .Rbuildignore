@@ -10,3 +10,6 @@ $run_dev.*
 ^group10app\.Rcheck$
 ^group10app.*\.tar\.gz$
 ^group10app.*\.tgz$
+^LICENSE\.md$
+^README\.Rmd$
+^CODE_OF_CONDUCT\.md$
