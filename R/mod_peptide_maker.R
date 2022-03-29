@@ -23,7 +23,7 @@ mod_peptide_maker_ui <- function(id){
              ,
       column(width = 4,
              numericInput(inputId = ns("dna_length"),
-                          label = "Input the dna length",
+                          label = "Input the DNA length",
                           value = 6000,
                           min = 3,
                           step = 3),
@@ -32,8 +32,9 @@ mod_peptide_maker_ui <- function(id){
                           style = "margin-top: 18px;")
              )
     ),
-    "The Peptide Sequence",
-    verbatimTextOutput(ns("peptide")) %>%
+    tags$strong("The Peptide Sequence"),
+    verbatimTextOutput(outputId = ns("peptide"),
+                       placeholder = TRUE) %>%
       tagAppendAttributes(style = "white-space: pre-wrap;")
 )}
 
