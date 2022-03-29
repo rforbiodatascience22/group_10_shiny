@@ -1,4 +1,4 @@
-#' Peptide_Maker UI Function
+#' peptide_maker UI Function
 #'
 #'
 #' @description A shiny Module.
@@ -8,16 +8,20 @@
 #' @noRd
 #'
 #' @importFrom shiny NS tagList
-mod_Peptide_Maker_ui <- function(id){
+mod_peptide_maker_ui <- function(id){
   ns <- NS(id)
   tagList(
     fluidRow(
-      column(8,
-             textAreaInput(ns("DNA_Sequence"), "DNA Sequence",
-                           value = "Enter DNA sequence..."
+      column(width = 8,
+             textAreaInput(
+               inputId = ns("dna_sequence"),
+               label = "DNA Sequence",
+               width = 300,
+               height = 100,
+               placeholder = "Enter DNA sequence..."
              ))
              ,
-      column(4,
+      column(width = 4,
              numericInput(ns("length"), "Input the dna length",
                           value = 0),
              actionButton(ns("generate"), "Generate DNA")
@@ -27,7 +31,7 @@ mod_Peptide_Maker_ui <- function(id){
     verbatimTextOutput(ns("peptide"))
 )}
 
-#' Peptide_Maker Server Functions
+#' peptide_maker Server Functions
 #'
 #' @noRd
 
@@ -37,22 +41,32 @@ simulation <- function(input){
     centraldogma::split_codons() %>%
     centraldogma::translate()
 }
-mod_Peptide_Maker_server <- function(id){
+mod_peptide_maker_server <- function(id){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
     observeEvent(input$generate, {
-      updateTextAreaInput(inputId = "DNA_Sequence",
+      updateTextAreaInput(inputId = "dna_sequence",
                           value = centraldogma::generate_dna(input$length))
       })
 
      output$peptide <- renderPrint({
-       simulation(input$DNA_Sequence)
+       simulation(input$dna_sequence)
        })
      })
   }
 
+if(FALSE){ # Testing
+  golem::detach_all_attached
+  golem::document_and_reload
+  ui <- mod_peptide_maker_ui("peptide_maker_1")
+  server <- function( input,output,session){
+    mod_peptide_maker_server("peptide_maker_1")
+  }
+  shinyApp(ui, server)
+}
+
 ## To be copied in the UI
-# mod_Peptide_Maker_ui("Peptide_Maker_1")
+# mod_peptide_maker_ui("peptide_maker_1")
 
 ## To be copied in the server
-# mod_Peptide_Maker_server("Peptide_Maker_1")
+# mod_peptide_maker_server("peptide_maker_1")

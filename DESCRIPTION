@@ -1,19 +1,20 @@
 Package: centraldogmaapp
-Title: central dogma in biology
+Title: Central Dogma in Biology
 Version: 0.0.0.9000
-Authors@R: c(
+Authors@R:c(
     person("Mikkel Frier", "Wolfhagen", , "s184240@student.dtu.dk", role = c("cre", "aut")),
     person("Nilas Tim", "Schüsler", , "s123015@student.dtu.dk", role = "aut"),
     person("Adresya Suresh", "Azhakath", role = "aut"),
     person("Kolbrun Dora", "Magnusdottir", role = "aut"),
     person("Filip Marek", "Uzdowski", role = "aut")
   )
-Description: Simulation of central dogma in biology .
+Description: Simulation of central dogma in biology.
 License: MIT + file LICENSE
 Imports: 
     centraldogma,
     config (>= 0.3.1),
     golem (>= 0.3.2),
+    magrittr,
     shiny (>= 1.7.1)
 Suggests: 
     spelling,

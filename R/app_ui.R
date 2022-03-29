@@ -10,11 +10,11 @@ app_ui <- function(request) {
     golem_add_external_resources(),
     # Your application UI logic
     fluidPage(
-      h1("centraldogmaapp"),
+      h1("centraldogma"),
       tabsetPanel(
         tabPanel(title = "Peptide Maker",
-                 mod_Peptide_Maker_ui("Peptide_Maker_1")),
-        tabPanel(title = "Plot Amino acid occurrences",
+                 mod_peptide_maker_ui("peptide_maker_1")),
+        tabPanel(title = "Plot Amino Acid Occurrences",
                  mod_plot_aa_occurrences_ui("plot_aa_occurrences_1"))
       )
     )

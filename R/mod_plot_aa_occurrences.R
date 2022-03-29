@@ -19,11 +19,11 @@ mod_plot_aa_occurrences_ui <- function(id){
           height = 100,
           placeholder = "Insert peptide sequence"
         ),
-        actionButton(inputId = ns("generate"), label = "Generate plot")
+        actionButton(inputId = ns("generate_plot"), label = "Generate plot")
       ),
       mainPanel(
         plotOutput(
-          outputId = ns("abundance")
+          outputId = ns("abundance_plot")
         )
       )
     )
@@ -36,16 +36,26 @@ mod_plot_aa_occurrences_ui <- function(id){
 mod_plot_aa_occurrences_server <- function(id){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
-    occurrence_plot <- eventReactive(input$generate, {
+    occurrence_plot <- eventReactive(input$generate_plot, {
       if(input$peptide == ""){
         NULL
       } else {
         centraldogma::plot_aa_occurrence(protein_string = input$peptide)
       }
     })
-    output$abundance <- renderPlot(occurrence_plot())
+    output$abundance_plot <- renderPlot(occurrence_plot())
 
   })
+}
+
+if(FALSE){ # Testing
+  golem::detach_all_attached
+  golem::document_and_reload
+  ui <- mod_plot_aa_occurrences_ui("plot_aa_occurrences_1")
+  server <- function( input,output,session){
+    mod_plot_aa_occurrences_server("plot_aa_occurrences_1")
+  }
+  shinyApp(ui, server)
 }
 
 ## To be copied in the UI
