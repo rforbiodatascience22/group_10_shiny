@@ -4,18 +4,11 @@
 dev_history.R
 ^dev$
 $run_dev.*
-^myshinyapp\.Rcheck$
-^myshinyapp.*\.tar\.gz$
-^myshinyapp.*\.tgz$
-<<<<<<< HEAD
-=======
-^centraldogma\.Rcheck$
-^centraldogma.*\.tar\.gz$
-^centraldogma.*\.tgz$
-^LICENSE\.md$
-^README\.Rmd$
-^CODE_OF_CONDUCT\.md$
->>>>>>> 02e6f10740d3b37a2c9fa3cc2685402415367229
 ^centraldogmaapp\.Rcheck$
 ^centraldogmaapp.*\.tar\.gz$
 ^centraldogmaapp.*\.tgz$
+^LICENSE\.md$
+^README\.Rmd$
+^CODE_OF_CONDUCT\.md$
+^app\.R$
+^rsconnect$

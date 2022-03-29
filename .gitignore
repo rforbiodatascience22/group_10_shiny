@@ -3,9 +3,6 @@
 .Rdata
 .httr-oauth
 .DS_Store
-myshinyapp.Rcheck/
-myshinyapp*.tar.gz
-myshinyapp*.tgz
 centraldogmaapp.Rcheck/
 centraldogmaapp*.tar.gz
 centraldogmaapp*.tgz
