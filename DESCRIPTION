@@ -1,7 +1,7 @@
 Package: centraldogmaapp
 Title: Central Dogma in Biology
 Version: 0.0.0.9000
-Authors@R:c(
+Authors@R: c(
     person("Mikkel Frier", "Wolfhagen", , "s184240@student.dtu.dk", role = c("cre", "aut")),
     person("Nilas Tim", "Schüsler", , "s123015@student.dtu.dk", role = "aut"),
     person("Adresya Suresh", "Azhakath", role = "aut"),

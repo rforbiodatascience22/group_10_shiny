@@ -22,38 +22,46 @@ mod_peptide_maker_ui <- function(id){
              ))
              ,
       column(width = 4,
-             numericInput(ns("length"), "Input the dna length",
-                          value = 0),
-             actionButton(ns("generate"), "Generate DNA")
+             numericInput(inputId = ns("dna_length"),
+                          label = "Input the dna length",
+                          value = 6000,
+                          min = 3,
+                          step = 3),
+             actionButton(inputId = ns("generate_dna"),
+                          label ="Generate DNA",
+                          style = "margin-top: 18px;")
              )
     ),
     "The Peptide Sequence",
-    verbatimTextOutput(ns("peptide"))
+    verbatimTextOutput(ns("peptide")) %>%
+      tagAppendAttributes(style = "white-space: pre-wrap;")
 )}
 
 #' peptide_maker Server Functions
 #'
 #' @noRd
 
-simulation <- function(input){
-  input %>%
-    centraldogma::transcribe() %>%
-    centraldogma::split_codons() %>%
-    centraldogma::translate()
-}
 mod_peptide_maker_server <- function(id){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
-    observeEvent(input$generate, {
+    observeEvent(input$generate_dna, {
       updateTextAreaInput(inputId = "dna_sequence",
-                          value = centraldogma::generate_dna(input$length))
+                          value = centraldogma::generate_dna(input$dna_length))
       })
 
-     output$peptide <- renderPrint({
-       simulation(input$dna_sequence)
-       })
+     output$peptide <- renderText({
+       if(nchar(input$dna_sequence) < 3){
+         NULL
+       } else {
+         input$dna_sequence %>%
+           toupper() %>%
+           centraldogma::transcribe() %>%
+           centraldogma::split_codons() %>%
+           centraldogma::translate()
+       }
      })
-  }
+  })
+}
 
 if(FALSE){ # Testing
   golem::detach_all_attached
