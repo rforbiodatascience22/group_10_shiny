@@ -1,0 +1,46 @@
+---
+title: "Lab 9 - Assignment"
+subtitle: "Group 10"
+output: pdf_document
+author:
+  - Adresya Suresh Azhakath, s212920
+  - Filip Marek Uzdowski, s220257
+  - Mikkel Frier Wolfhagen, s184240
+  - Kolbrun Dora Magnusdottir, s213732
+  - Nilas Tim Schüsler, s123015
+urlcolor: blue
+---
+
+The most challenging thing about Shiny was the setup, a lot of time was spent on
+figuring out what the different helper functions did and what the structure
+actually was. The benefits of golem is that an experienced user of golem gets a
+lot of standardized setup for the app being developed. The standardized setup
+makes it easier to understand how the shiny app works if you are already
+familiar with golem.
+
+The downside is that all these options can be overwhelming for one not
+experienced with golem, especially the high degree of selectivity can make it
+hard to decipher what is actually important.
+
+Reproducibility is tricky when using Shiny apps, one way to cut down on
+confusion is to label the app clearly with the current version so people know
+which version of the app was being used for that specific analysis.
+
+This version naming should be automatically updated when the given app or
+database is updated.
+
+Also interactive apps are especially difficult to reproduce if you have to do
+multiple clicks in a specific order to get the desired data, as that is often
+not specified and you can easily do mistakes.
+
+We see a challenge in incorporating Shiny apps in longer pipelines as the pipe
+needs to be broken to copy the input into the app. This of course can be avoided
+by having links to the package behind the app at the webpage of the app.
+
+It can also be hard to see if an app is faulty as the code is not directly
+available to see, so you might end up with a faulty analysis because of a bad
+app.
+
+Our shiny app GitHub page can be found
+[here](https://github.com/rforbiodatascience22/group_10_shiny) and our
+shinyapps.io app can be tried [here](https://nilas.shinyapps.io/centraldogma/).
